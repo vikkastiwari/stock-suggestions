@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export const getStockRecommendations = async (query: string) => {
   try {
-     debugger
     const response = await axios.post('/api/getRecommendations', { query });
     return response.data;
   } catch (error) {
