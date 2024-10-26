@@ -7,15 +7,6 @@ const GEMINI_API_URL = 'https://api.gemini.com/sentiment';
 const { TextServiceClient } = require("@google-ai/generativelanguage");
 const { GoogleAuth } = require("google-auth-library");
 
-const MODEL_NAME = "models/text-bison-001";
-const API_KEY = "YOUR API KEY";
-
-const client = new TextServiceClient({
-  authClient: new GoogleAuth().fromAPIKey(API_KEY),
-});
-
-const promptString = "Tell me whether the following sentence's sentiment is positive or negative or something in between.\nSentence I would love to walk along the beach.\nSentiment Somewhat positive\nSentence I love my new record player\nSentiment Positive\nSentence I really hate it when my brother steals my things\nSentiment Negative\nSentence I really don't know how to feel about Pokemon\nSentiment";
-
 export const analyzeSentiment = async (articles: string[]) => {
   const results = await Promise.all(
     articles.map(async (article) => {
