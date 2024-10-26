@@ -4,12 +4,11 @@ interface Stock {
   name: string;
   symbol: string;
   score: string;
-  roce: string; // Return on Capital Employed
-  peRatio: string; // Price to Earnings Ratio
+  roce: string; 
+  peRatio: string; 
 }
 
 const TopStocks: React.FC = () => {
-  // Example stock data (replace with real data later)
   const stocks: Stock[] = [
     { name: 'Apple', symbol: 'AAPL', score: '8.5', roce: '15%', peRatio: '28' },
     { name: 'Microsoft', symbol: 'MSFT', score: '8.3', roce: '17%', peRatio: '32' },

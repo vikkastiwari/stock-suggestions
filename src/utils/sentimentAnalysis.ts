@@ -2,8 +2,8 @@
 
 import axios from 'axios';
 
-const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY; // Store your API key in environment variables
-const GEMINI_API_URL = 'https://api.gemini.com/sentiment'; // Adjust to the correct endpoint from Gemini
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY; 
+const GEMINI_API_URL = 'https://api.gemini.com/sentiment'; 
 const { TextServiceClient } = require("@google-ai/generativelanguage");
 const { GoogleAuth } = require("google-auth-library");
 
@@ -31,8 +31,7 @@ export const analyzeSentiment = async (articles: string[]) => {
           }
         );
 
-        // Extract sentiment score from the response
-        const sentimentScore = response.data.score; // Adjust based on the actual response structure
+        const sentimentScore = response.data.score;
         return { article, sentimentScore }; // Keep it as is
       } catch (error) {
         console.error('Error fetching sentiment:', error);
